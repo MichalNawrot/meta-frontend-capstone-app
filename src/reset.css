@@ -1,0 +1,64 @@
+/* Reset some default styles for cross-browser consistency */
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+pre,
+a,
+form,
+label,
+fieldset,
+input,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Apply a common baseline to everything */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+/* Remove list styles (bullet points and numbers) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove the default underline style for links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Use box-sizing to include padding and border in element width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Optional: Set a consistent background color and text color */
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Optional: Remove outline on focused elements */
+:focus {
+  outline: none;
+}
