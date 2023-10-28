@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header>
-            <img src="images/logo512.png" alt="logo"></img>
+            <img src="images/logo-text-color.png" alt="logo" width="100px"></img>
         </header>
     );
 };
