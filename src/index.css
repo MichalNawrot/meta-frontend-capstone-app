@@ -12,28 +12,25 @@
 }
 
 
-body {
-  margin: 0;
+#root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* padding-left: 300px;
-  padding-right: 300px; */
-  width: 100%;
-  max-width: 1440px;
-  height: 450px;
+  margin: auto;
+  max-width: 1280px;
   display: grid;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
-  grid-template-rows: auto;
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-auto-flow: column;
+  grid-gap: 0em;
   grid-template-areas:
   "head nav nav"
-  "main main main"
+  "hero hero hero"
+  "specials specials specials"
+  "testimonials testimonials testimonials"
+  "about about about"
   "foot foot foot";
 }
 
@@ -45,30 +42,46 @@ code {
 header {
   grid-area: head;
   background-color: var(--neutral-color-1);
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.2rem;
 }
 
 header>img {
-  max-width: 25%;
+  width: 10em;
 }
-
 
 nav {
   grid-area: nav;
-  color: white;
-  background-color: var(--neutral-color-2);
-}
-nav menu {
-  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--neutral-color-1);
 }
 
-main {
-  grid-area: main;
-  background-color: var(--white-color);
+nav menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* align-items: center; */
+  gap: 1em;
+  font-size: small;
+  list-style-type: none;
+  font-weight: bold;
+  padding: 0;
+}
+
+nav menu ul li a:hover {
+  color: var(--primary-color-1);
 }
 
 #hero {
   grid-area: hero;
   background-color: var(--primary-color-1);
+  display: grid;
+  grid-auto-flow: column;
+}
+
+#hero img {
+  width: 10em;
 }
 
 #hero h1 {
@@ -80,32 +93,95 @@ color: var(--neutral-color-1)
 
 #specials {
   grid-area: specials;
-  background-color: var(--secondary-color-1);
+  background-color: var(--white-color);
 }
+
+#specials #header {
+  margin: 2% 10%;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+#specials #cards {
+  margin: 2% 10%;
+  display: grid;
+  grid-auto-flow: column;
+}
+
 #testimonials {
   grid-area: testimonials;
   background-color: var(--secondary-color-2);
+  text-align: center;
+}
+
+#testimonials #cards {
+  padding: 5rem;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
 #about {
   grid-area: about;
-  background-color: var(--secondary-color-1);
+  background-color: var(--white-color);
+  display: grid;
+  grid-auto-flow: column;
+  grid-column: repeat(2, 1fr);
 }
 
 footer {
   grid-area: foot;
-  font-size: 10px;
+  font-size: 1em;
   color: var(--text-color);
   background-color: var(--neutral-color-1);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-areas: 
+  "foot-img foot-content foot-content";
+  gap: 0em;
 }
 
 footer img {
-  margin: 10px;
+  grid-area: foot-img;
+  margin: 1em;
   align-items: center;
 }
 
 footer > div {
+  grid-area: foot-content;
   display: flex;
-  align-items: right;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: stretch;
+  justify-content: space-around;
   text-decoration: none;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1280px) {
+
+  #root {
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+      grid-template-areas:
+      "head head head"
+      "nav nav nav"
+      "hero hero hero"
+      "specials specials specials"
+      "testimonials testimonials testimonials"
+      "about about about"
+      "foot foot foot";
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  nav menu {
+    font-size: large;
+    gap: 2rem
+  }
 }

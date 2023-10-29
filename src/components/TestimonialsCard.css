@@ -1,0 +1,40 @@
+.card {
+    background-color: var(--neutral-color-1);
+    margin: 0.2rem;
+    width: 30%;
+    min-width: 280px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
+    grid-template-areas:
+    "name name name"
+    "stars stars photo"
+    " text text photo"
+    " text text photo";
+    padding: 0.3rem;
+    border-radius: 16px;
+    filter: drop-shadow(8px 8px 12px var(--neutral-color-2))
+}
+
+.card h3 {
+  grid-area: name;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card .stars {
+  grid-area: stars;
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  grid-area: photo;
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.card p {
+  grid-area: text;
+}

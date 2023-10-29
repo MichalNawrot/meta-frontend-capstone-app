@@ -1,9 +1,45 @@
+import SpecialsCard from "./SpecialsCard";
+
+const specials = [
+    {
+        name: "Greek Salad",
+        price: "12.99",
+        src: "images/meal-greek-salad.jpg",
+        alt: "Specials greek salad",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+        name: "Bruchetta",
+        price: "5.99",
+        src: "images/meal-bruchetta.png",
+        alt: "Specials bruchetta",
+        description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
+    },
+    {
+        name: "Lemon Dessert",
+        price: "4.99",
+        src: "images/meal-lemon-dessert.jpg",
+        alt: "Specials lemon dessert",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+]
+
 const Specials = () => {
     return (
         <div id="specials">
-            <img src="images/meal-greek-salad.jpg" alt="Specials greek salad" width="100px"></img>
-            <img src="images/meal-bruchetta.png" alt="Specials bruchetta" width="100px"></img>
-            <img src="images/meal-lemon-dessert.jpg" alt="Specials lemon dessert" width="100px"></img>
+            <div id="header">
+                <h1>This weeks specials!</h1>
+                <button>Online Menu</button>
+            </div>
+            <div id="cards">
+                {
+                    specials.map((special) => {
+                        return (
+                            <SpecialsCard props={special} />
+                        );
+                    })
+                }
+            </div>
         </div>
     );
 };
