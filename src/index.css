@@ -26,17 +26,39 @@
   grid-auto-flow: column;
   grid-gap: 0em;
   grid-template-areas:
-  "head nav nav"
-  "hero hero hero"
-  "specials specials specials"
-  "testimonials testimonials testimonials"
-  "about about about"
-  "foot foot foot";
+    "head nav nav"
+    "hero hero hero"
+    "specials specials specials"
+    "testimonials testimonials testimonials"
+    "about about about"
+    "foot foot foot";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,
+h2 {
+  font-family: Markazi Text, serif;
+}
+
+p {
+  font-family: Karla, sans-serif;
+}
+
+button {
+  background-color: #f4ce14;
+  border: none;
+  max-width: 14rem;
+  border-radius: 10px;
+  color: #000;
+  font-family: Karla, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  outline: none;
+  padding: 10px;
 }
 
 header {
@@ -76,36 +98,74 @@ nav menu ul li a:hover {
 #hero {
   grid-area: hero;
   background-color: var(--primary-color-1);
+}
+
+#hero-content {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2% 10%;
+  gap: 1rem;
 }
 
-#hero img {
-  width: 10em;
+#hero-img {
+  display: flex;
+  justify-content: flex-end;
 }
 
-#hero h1 {
-color: var(--primary-color-2)
+#hero-img img {
+  position: relative;
+  left: -5%;
+  top: 16%;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: 0% 60%;
+  min-width: 14rem;
+  width: 18rem;
+  height: 18rem;
+  min-height: 16rem;
+  justify-self: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
 }
-#hero p {
-color: var(--neutral-color-1)
+
+#hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-text h1 {
+  color: var(--primary-color-2);
+  font-size: 3rem;
+}
+
+#hero-text h2 {
+  color: var(--white-color);
+  font-size: 2rem;
+}
+
+#hero-text p {
+  color: var(--neutral-color-1);
+  margin: 2% 0 4% 0;
+  max-width: 20rem;
 }
 
 #specials {
+  margin: 4% 10% 2% 10%;
   grid-area: specials;
   background-color: var(--white-color);
 }
 
 #specials #header {
-  margin: 2% 10%;
-  display: grid;
-  grid-auto-flow: column;
+  margin: 0 0 2% 0;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 #specials #cards {
-  margin: 2% 10%;
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #testimonials {
@@ -126,8 +186,35 @@ color: var(--neutral-color-1)
   grid-area: about;
   background-color: var(--white-color);
   display: grid;
-  grid-auto-flow: column;
-  grid-column: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2% 10%;
+  gap: 1rem;
+}
+
+#text p {
+  margin: 2% 0 4% 0;
+  max-width: 20rem;
+}
+
+#photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#photos img {
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: 80%;
+  width: 12rem;
+  height: 22rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+
+#photos img:nth-child(2) {
+  left: -5%;
+  position: relative;
+  top: -5%;
 }
 
 footer {
@@ -138,24 +225,25 @@ footer {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
-  grid-template-areas: 
-  "foot-img foot-content foot-content";
+  grid-template-areas:
+    "foot-img foot-content foot-content";
   gap: 0em;
 }
 
 footer img {
   grid-area: foot-img;
-  margin: 1em;
+  margin: 2%;
   align-items: center;
 }
 
-footer > div {
+footer>div {
   grid-area: foot-content;
+  margin: 2%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 1em;
   align-items: stretch;
-  justify-content: space-around;
+  justify-content: space-between;
   text-decoration: none;
 }
 
@@ -164,9 +252,9 @@ footer > div {
 @media screen and (max-width: 1280px) {
 
   #root {
-      padding-left: 0.1rem;
-      padding-right: 0.1rem;
-      grid-template-areas:
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    grid-template-areas:
       "head head head"
       "nav nav nav"
       "hero hero hero"
@@ -184,4 +272,28 @@ footer > div {
     font-size: large;
     gap: 2rem
   }
+
+  #hero-img img {
+    max-height: 16rem;
+  }
+
+  #hero-img img {
+    left: 0;
+    top: 0;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: 0% 60%;
+    max-width: 18rem;
+    width: 100%;
+    height: 66%;
+    justify-self: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  }
+
+  #photos img {
+    object-fit: cover;
+    object-position: 75%;
+    max-width: 10rem;
+  }
+
 }
