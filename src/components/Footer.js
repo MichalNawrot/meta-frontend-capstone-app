@@ -7,16 +7,17 @@ const Footer = () => {
                     <strong>Navigation</strong>
                     <ul>
                         <li>Home</li>
-                        <li>About menu</li>
-                        <li>Reservations</li>
+                        <li>About</li>
+                        <li>Online Menu</li>
+                        <li>Reserve a Table</li>
                         <li>Order Online</li>
-                        <li>Login</li>
                     </ul>
                 </div>
                 <div>
                     <strong>Contact</strong>
                     <ul>
-                        <li>495 Grove Street, New York, NY 10014, USA</li>
+                        <li>495 Grove Street, </li>
+                        <li>New York, NY 10014, USA</li>
                         <li>+1 123456789</li>
                         <li>info@littlelemon.com</li>
                     </ul>
