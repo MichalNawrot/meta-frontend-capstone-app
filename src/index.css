@@ -31,6 +31,7 @@
     "specials specials specials"
     "testimonials testimonials testimonials"
     "about about about"
+    "booking booking booking"
     "foot foot foot";
 }
 
@@ -85,6 +86,12 @@ nav {
   background-color: var(--neutral-color-1);
 }
 
+menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 nav menu {
   display: flex;
   flex-wrap: wrap;
@@ -92,12 +99,12 @@ nav menu {
   /* align-items: center; */
   gap: 1em;
   font-size: small;
-  list-style-type: none;
   font-weight: bold;
   padding: 0;
+  margin: 2% 0 2% 0;
 }
 
-nav menu ul li a:hover {
+nav menu li:hover {
   color: var(--primary-color-1);
 }
 
@@ -253,6 +260,45 @@ footer>div {
   text-decoration: none;
 }
 
+.booking-page {
+  grid-area: booking;
+  /* background-color: var(--primary-color-1); */
+  margin: 2% 10%;
+}
+
+.booking-page #title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.booking-page form {
+  display: flex;
+  padding: 5rem;
+  flex-direction: column;
+}
+
+.booking-page input[type="submit"] {
+  align-self: center;
+  background-color: var(--primary-color-2);
+  border: none;
+  max-width: 16rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: Karla, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  outline: none;
+  padding: 10px;
+  margin-top: 2%;
+}
+
+.booking-page input[type="submit"]:hover {
+  background-color: var(--neutral-color-2);
+  color: var(--white-color);
+  filter: drop-shadow(8px 8px 12px var(--neutral-color-2))
+}
+
+
 
 /* Responsive Styles */
 @media screen and (max-width: 1280px) {
@@ -267,6 +313,7 @@ footer>div {
       "specials specials specials"
       "testimonials testimonials testimonials"
       "about about about"
+      "booking booking booking"
       "foot foot foot";
   }
 

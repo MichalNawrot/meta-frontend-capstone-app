@@ -1,3 +1,5 @@
+import MenuLinks from "./MenuLinks";
+
 const Footer = () => {
     return (
         <footer>
@@ -5,13 +7,7 @@ const Footer = () => {
             <div>
                 <div>
                     <strong>Navigation</strong>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Online Menu</li>
-                        <li>Reserve a Table</li>
-                        <li>Order Online</li>
-                    </ul>
+                    <MenuLinks />
                 </div>
                 <div>
                     <strong>Contact</strong>
