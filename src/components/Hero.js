@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
     return (
         <div id="hero">
@@ -6,7 +8,7 @@ const Hero = () => {
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                    <button>Reserve a Table</button>
+                    <button><Link to="/reserve-a-table">Reserve a Table</Link></button>
                 </div>
                 <div id="hero-img">
                     <img src="images/restaurant-food.jpg" alt="Little Lemon food"></img>

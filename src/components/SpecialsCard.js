@@ -1,4 +1,5 @@
 import "./SpecialsCard.css";
+import { Link } from "react-router-dom";
 
 const SpecialsCard = ({props}) => {
     return (
@@ -8,7 +9,7 @@ const SpecialsCard = ({props}) => {
                 <h3>{props.name}</h3>
                 <h4>${props.price}</h4>
                 <p id="desc">{props.description}</p>
-                <p id="delivery"><strong>Order a delivery</strong></p>
+                <p id="delivery"><Link to="/order-online"><strong>Order online</strong></Link></p>
             </div>
         </>
     );

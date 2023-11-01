@@ -1,4 +1,5 @@
 import SpecialsCard from "./SpecialsCard";
+import { Link } from "react-router-dom";
 
 const specials = [
     {
@@ -29,7 +30,7 @@ const Specials = () => {
         <div id="specials">
             <div id="header">
                 <h1>This weeks specials!</h1>
-                <button>Online Menu</button>
+                <button><Link to="/online-menu">Online Menu</Link></button>
             </div>
             <div id="cards">
                 {
