@@ -7,7 +7,6 @@ const BookingForm = (props) => {
     const [resTime, setResTime] = useState("");
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("");
-
     return (
         <form>
             <div>
@@ -24,7 +23,7 @@ const BookingForm = (props) => {
                 <label htmlFor="res-date"> Choose date</label>
                 <input type="date" id="res-date"
                     value={resDate}
-                    onChange={(e) => setResDate(e.target.value)}
+                    onChange={(e) => props.dispatch({type: e.target.value})}
                     required
                 />
             </div>
@@ -36,9 +35,9 @@ const BookingForm = (props) => {
                     required
                 >
                     {
-                        props.availableTimes.map((time) => {
+                        props.availableTimes.timeSlots.map((time, index) => {
                             return (
-                                <option>{time}</option>
+                                <option key={index}>{time}</option>
                             );
                         })
                     }
