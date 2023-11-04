@@ -24,9 +24,9 @@ const Testimonials = () => {
             <h1>Testimonials</h1>
             <div id="cards">
                 {
-                    reviews.map((review) => {
+                    reviews.map((review, index) => {
                         return (
-                            <TestimonialsCard props={review} />
+                            <TestimonialsCard key={index} props={review} />
                         );
                     })
                 }

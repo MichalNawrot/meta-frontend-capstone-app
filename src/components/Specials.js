@@ -34,9 +34,9 @@ const Specials = () => {
             </div>
             <div id="cards">
                 {
-                    specials.map((special) => {
+                    specials.map((special, index) => {
                         return (
-                            <SpecialsCard props={special} />
+                            <SpecialsCard key={index} props={special} />
                         );
                     })
                 }
