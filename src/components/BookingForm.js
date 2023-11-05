@@ -75,6 +75,7 @@ const BookingForm = (props) => {
                         onChange={(e) => setOccasion(e.target.value)}
                         required
                     >
+                        <option>None</option>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>

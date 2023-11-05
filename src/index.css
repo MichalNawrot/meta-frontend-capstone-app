@@ -283,7 +283,6 @@ footer>div {
   background-color: rgba(73, 94, 87, .9);
   border-radius: 16px;
   width: max(345px, 30%);
-  height: 60%;
   margin: auto;
   padding: 1rem;
   font-family: Karla, sans-serif;
@@ -295,8 +294,30 @@ footer>div {
   color: var(--white-color);
   font-size: large;
 }
+
+.booking-page form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-page label::after {
+  content: "*";
+  color: red;
+}
+
 .booking-page label {
-  margin-right: 2%;
+  margin-top: 3%;
+}
+
+.booking-page input, select {
+  background-color: var(--white-color);
+  border: 1px solid var(--neutral-color-1);
+  border-radius: 8px;
+  min-height: 1.5rem;
+  transition: .32s ease;
+  text-align: center;
+  font-size: large;
+  font-family: Karla, sans-serif;
 }
 
 .booking-page input[type="submit"] {

@@ -7,7 +7,7 @@ const specials = [
         price: "12.99",
         src: "images/meal-greek-salad.jpg",
         alt: "Specials greek salad",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
     },
     {
         name: "Bruchetta",
@@ -21,7 +21,7 @@ const specials = [
         price: "4.99",
         src: "images/meal-lemon-dessert.jpg",
         alt: "Specials lemon dessert",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
     },
 ]
 

@@ -8,7 +8,7 @@ const TestimonialsCard = ({props}) => {
                 <div className="stars">
                     <p>Stars: {props.score}/5</p>
                 </div>
-                <img src="images/customer1.jpg" alt="Happy customer"></img>
+                <img src={props.photo} alt="Happy customer"></img>
                 <p>{props.text}</p>
             </div>
         </>
