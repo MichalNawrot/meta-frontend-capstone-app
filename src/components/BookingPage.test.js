@@ -32,7 +32,7 @@ test('returns state when date passed in', () => {
 
 test('Renders the BookingForm heading', () => {
     render(<MockBookingForm />);
-    const tableForElement = screen.getByText("Reserve a Table for:");
+    const tableForElement = screen.getByText("Reserve a Table for");
     expect(tableForElement).toBeInTheDocument();
 
     const dateElement = screen.getByText("Choose date");
@@ -71,7 +71,7 @@ test("submit button should be disabled if an error is present", () => {
 test("submit button should be active when form is valid", () => {
     render(<MockBookingForm />);
     const submitButton = screen.getByRole("button");
-    const tableForElement = screen.getByLabelText("Reserve a Table for:");
+    const tableForElement = screen.getByLabelText("Reserve a Table for");
     fireEvent.change(tableForElement, { target: { value: "John Doe" } });
 
     const dateElement = screen.getByLabelText("Choose date");
