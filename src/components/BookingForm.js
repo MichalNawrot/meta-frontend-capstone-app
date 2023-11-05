@@ -4,6 +4,10 @@ import { useState } from "react";
 const BookingForm = (props) => {
     const [name, setName] = useState("");
     const [resDate, setResDate] = useState("");
+    const handleDateChange = (e) => {
+        setResDate(e.target.value);
+        props.dispatch({type: "date-changed"})
+      };
     const [resTime, setResTime] = useState("");
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("");
@@ -23,7 +27,7 @@ const BookingForm = (props) => {
                 <label htmlFor="res-date"> Choose date</label>
                 <input type="date" id="res-date"
                     value={resDate}
-                    onChange={(e) => props.dispatch({type: e.target.value})}
+                    onChange={handleDateChange}
                     required
                 />
             </div>
