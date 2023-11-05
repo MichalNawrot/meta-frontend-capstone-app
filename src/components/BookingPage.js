@@ -18,9 +18,6 @@ const BookingPage = () => {
     const navigate = useNavigate()
 
     function submitForm(formData) {
-        console.log("FFFFFFFFFFFFFFFFFFF");
-        console.log(formData);
-        console.log(formData.target);
         if (submitAPI(formData)) {
             navigate("/confirmed-booking")
         };

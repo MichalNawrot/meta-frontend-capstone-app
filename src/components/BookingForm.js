@@ -6,8 +6,8 @@ const BookingForm = (props) => {
     const [resDate, setResDate] = useState("");
     const handleDateChange = (e) => {
         setResDate(e.target.value);
-        props.dispatch({date: new Date(e.target.value) })
-      };
+        props.dispatch({ date: new Date(e.target.value) })
+    };
     const [resTime, setResTime] = useState("");
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("");

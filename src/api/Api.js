@@ -8,13 +8,8 @@ const seededRandom = function (seed) {
 };
 
 const fetchAPI = function (date) {
-    console.log("DDDDDDDDDDDDDDDDD");
-    console.log(date);
-    console.log(date.getDate());
     let result = [];
     let random = seededRandom(date.getDate());
-    console.log("RRRRRRRRRRRRRRRRR");
-    console.log(random());
     for (let i = 17; i <= 23; i++) {
         if (random() < 0.5) {
             result.push(i + ":00");
