@@ -12,7 +12,7 @@ const BookingForm = (props) => {
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("");
     return (
-        <form>
+        <form onSubmit={props.submitForm}>
             <div>
                 <label htmlFor="name">Reserve a Table for:</label>
                 <input type="text" id="name"

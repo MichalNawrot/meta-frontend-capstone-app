@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Specials from './components/Specials';
 import BookingPage from './components/BookingPage';
 import OrderOnline from './components/OrderOnline';
+import ConfirmedBooking from './components/ConfirmedBooking';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/online-menu" element={<Specials />} />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/about" element={<About />} />
+        <Route path="/confirmed-booking" element={<ConfirmedBooking />} />
       </Routes>
       <Footer />
     </>
