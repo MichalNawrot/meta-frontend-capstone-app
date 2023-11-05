@@ -25,7 +25,6 @@ const BookingPage = () => {
     return (
         <div className="booking-page">
             {/* <h1 id="title">This is BookingPage</h1> */}
-            {console.log(availableTimes)}
             <BookingForm availableTimes={availableTimes} dispatch={dispatch}
                 submitForm={submitForm} />
         </div>
