@@ -1,11 +1,15 @@
 import { useReducer } from "react";
 import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI } from "../api/Api";
 
 function updateTimes(state, action) {
-    return { timeSlots: ['17:00', '18:00', '19:00', '20:00', '21:00'] }
+    if (action && action.date) {
+        return { timeSlots: fetchAPI(action.date) };
+    }
+    return state;
 };
 
-const initializeTimes = { timeSlots: ['17:00', '18:00', '19:00', '20:00', '21:00'] };
+const initializeTimes = { timeSlots: fetchAPI(new Date()) };
 
 const BookingPage = () => {
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes)
@@ -13,6 +17,7 @@ const BookingPage = () => {
     return (
         <div className="booking-page">
             {/* <h1 id="title">This is BookingPage</h1> */}
+            {console.log(availableTimes)};
             <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
         </div>
     );
@@ -20,4 +25,4 @@ const BookingPage = () => {
 
 export default BookingPage;
 
-export { updateTimes, initializeTimes};
+export { updateTimes, initializeTimes };
