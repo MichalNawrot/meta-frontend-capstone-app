@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const BookingForm = (props) => {
@@ -11,6 +11,18 @@ const BookingForm = (props) => {
     const [resTime, setResTime] = useState("");
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("");
+    const [isdisabled, setIsDisabled] = useState(true)
+
+
+
+    useEffect(() => {
+        const validate = () => {
+            return name.length>0 & resDate.length>0;
+        };
+        const isValid = validate()
+        setIsDisabled(!isValid)
+    }, [name, resDate])
+
     return (
         <form onSubmit={props.submitForm}>
             <div>
@@ -24,7 +36,7 @@ const BookingForm = (props) => {
                 />
             </div>
             <div>
-                <label htmlFor="res-date"> Choose date</label>
+                <label htmlFor="res-date">Choose date</label>
                 <input type="date" id="res-date"
                     value={resDate}
                     onChange={handleDateChange}
@@ -32,7 +44,7 @@ const BookingForm = (props) => {
                 />
             </div>
             <div>
-                <label htmlFor="res-time" > Choose time</label>
+                <label htmlFor="res-time" >Choose time</label>
                 <select id="res-time "
                     value={resTime}
                     onChange={(e) => setResTime(e.target.value)}
@@ -66,7 +78,7 @@ const BookingForm = (props) => {
                     <option>Anniversary</option>
                 </select>
             </div>
-            <input type="submit" value="Reserve a Table" />
+            <input type="submit" value="Reserve a Table" disabled={isdisabled} />
         </form>
     );
 };
