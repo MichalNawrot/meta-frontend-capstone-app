@@ -9,7 +9,7 @@ const SpecialsCard = ({props}) => {
                 <h3>{props.name}</h3>
                 <h4>${props.price}</h4>
                 <p id="desc">{props.description}</p>
-                <p id="delivery"><Link to="/order-online"><strong>Order online</strong></Link></p>
+                <p id="delivery" aria-label='On Click'><Link to="/order-online"><strong>Order online</strong></Link></p>
             </div>
         </>
     );

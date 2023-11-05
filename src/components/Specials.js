@@ -30,7 +30,7 @@ const Specials = () => {
         <div id="specials">
             <div id="header">
                 <h1>This weeks specials!</h1>
-                <button><Link to="/online-menu">Online Menu</Link></button>
+                <button aria-label='On Click'><Link to="/online-menu">Online Menu</Link></button>
             </div>
             <div id="cards">
                 {

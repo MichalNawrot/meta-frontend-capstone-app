@@ -8,7 +8,7 @@ const Hero = () => {
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                    <button><Link to="/reserve-a-table">Reserve a Table</Link></button>
+                    <button aria-label='On Click'><Link to="/reserve-a-table">Reserve a Table</Link></button>
                 </div>
                 <div id="hero-img">
                     <img src="images/restaurant-food.jpg" alt="Little Lemon food"></img>
